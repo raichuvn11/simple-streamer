@@ -22,11 +22,7 @@ def video_frame_callback(frame):
 with col1:
     ctx = webrtc_streamer(key="example", video_frame_callback=video_frame_callback, 
                           media_stream_constraints={"video": True, "audio": False},
-                          rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]},
-                                                            {"urls": ["stun:stun1.l.google.com:19302"]},
-                                                            {"urls": ["stun:stun2.l.google.com:19302"]},
-                                                            {"urls": ["stun:stun3.l.google.com:19302"]},
-                                                            {"urls": ["stun:stun4.l.google.com:19302"]}]})
+                          rtc_configuration={"iceServers": [{"urls": "relay1.expressturn.com:3478", "username":"efFOT2XDG4ORX9KD73", "credential":"5UlhzC61tHCk4gH5"}]})
 
 imgout_place = col2.empty()
 
