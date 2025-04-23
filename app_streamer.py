@@ -20,9 +20,21 @@ def video_frame_callback(frame):
 
 
 with col1:
-    ctx = webrtc_streamer(key="example", video_frame_callback=video_frame_callback, 
-                          media_stream_constraints={"video": True, "audio": False},
-                          rtc_configuration={"iceServers": [{"urls": "relay1.expressturn.com:3478", "username":"efFOT2XDG4ORX9KD73", "credential":"5UlhzC61tHCk4gH5"}]})
+    ctx = webrtc_streamer(
+        key="example",
+        video_frame_callback=video_frame_callback,
+        media_stream_constraints={"video": True, "audio": False},
+        rtc_configuration={
+            "iceServers": [
+                {
+                    "urls": ["turn:relay1.expressturn.com:3478"],
+                    "username": "efFOT2XDG4ORX9KD73",
+                    "credential": "5UlhzC61tHCk4gH5"
+                }
+            ]
+        }
+    )
+
 
 imgout_place = col2.empty()
 
